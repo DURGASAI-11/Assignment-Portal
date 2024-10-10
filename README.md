@@ -47,10 +47,10 @@ can upload assignments. Expects task and adminId in the request body.
 Returns the created assignment. postman : Method: POST Headers:
 Authorization: Bearer \<token\>
 
-req.body{ \"adminId\":\"6707ee3cd19d35a72d2194a2\",
+req.body{ \"adminId\":\"6707ee3cd19d35a72d2174a2\",
 \"task\":\"assignment portal\" } output : { \"assignment\": {
 \"userId\": \"6707e499777d1a00b45efddc\", \"task\": \"assignment
-portal\", \"admin\": \"6707ee3cd19d35a72d2194a2\", \"status\":
+portal\", \"admin\": \"6707ee3cd19d35a72d2174a2\", \"status\":
 \"pending\", \"\_id\": \"67081e29e9360f6b5920da76\", \"createdAt\":
 \"2024-10-10T18:34:17.544Z\", \"\_\_v\": 0 } }
 
@@ -58,9 +58,9 @@ portal\", \"admin\": \"6707ee3cd19d35a72d2194a2\", \"status\":
 all admins from the user collection. Returns the list of admins.
 Middleware: authenticateUser middleware will verify user token. postman
 : Method: GET Headers: Authorization: Bearer \<token\> output : {
-\"admins\": \[ { \"\_id\": \"6707ee3cd19d35a72d2194a2\", \"name\":
-\"Lakshman Paga\", \"email\": \"lakshmanpaga@gmail.com\", \"role\":
-\"admin\", \"linkedinId\": \"eoBKwj4dV7\", \"\_\_v\": 0 } \] }
+\"admins\": \[ { \"\_id\": \"6707ee3cd19d35a72d2174a2\", \"name\":
+\"Lakshman\", \"email\": \"lakshman@gmail.com\", \"role\":
+\"admin\", \"linkedinId\": \"doB545454dV7\", \"\_\_v\": 0 } \] }
 
 7\) http://localhost:3000/Admin/assignments
 
@@ -71,11 +71,11 @@ Response: Returns the list of assignments assigned to the authenticated
 admin. output: { \"assignments\": \[ { \"\_id\":
 \"670808c1ebeffd615d4aca84\", \"userId\": \"6707e499777d1a00b45efddc\",
 \"task\": \"assignment portal\", \"admin\":
-\"6707ee3cd19d35a72d2194a2\", \"status\": \"rejected\", \"createdAt\":
+\"6707ee3cd19d35a72d2174a2\", \"status\": \"rejected\", \"createdAt\":
 \"2024-10-10T17:02:57.175Z\", \"\_\_v\": 0 }, { \"\_id\":
 \"67081e29e9360f6b5920da76\", \"userId\": \"6707e499777d1a00b45efddc\",
 \"task\": \"assignment portal\", \"admin\":
-\"6707ee3cd19d35a72d2194a2\", \"status\": \"pending\", \"createdAt\":
+\"6707ee3cd19d35a72d2174a2\", \"status\": \"pending\", \"createdAt\":
 \"2024-10-10T18:34:17.544Z\", \"\_\_v\": 0 } \] }
 
 8\) http://localhost:3000/Admin/assignments/:id/accept Description:
