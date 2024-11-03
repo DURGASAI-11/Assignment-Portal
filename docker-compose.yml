@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"  # Map port 3000 on host to port 3000 in the container
+    volumes:
+      - .:/app  # Maps the current directory to /app in the container
+      - /app/node_modules  # Prevents overwriting node_modules in the container
+    env_file:  # Specify the env_file to load your variables
+      - config.env
+    depends_on:
+      - mongo  # Ensure mongo service is started before the app
+
+  mongo:
+    image: mongo:6.0.3  # Use a MongoDB image
+    ports:
+      - "27017:27017"  # Map port 27017 on host to port 27017 in the container
+    volumes:
+      - mongo_data:/data/db  # Persist MongoDB data
+
+volumes:
+  mongo_data:  # Named volume for MongoDB data
